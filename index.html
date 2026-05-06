@@ -267,8 +267,21 @@
       box-shadow: var(--shadow);
     }
 
+    .services-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .services-showcase .store-carousel {
+      height: 100%;
+      margin-bottom: 0;
+    }
+
     .carousel-track {
       display: flex;
+      height: 100%;
       width: 300%;
       animation: storeSlide 18s infinite;
     }
@@ -280,12 +293,12 @@
     .carousel-slide {
       position: relative;
       width: 33.333%;
-      min-height: 430px;
+      min-height: 520px;
     }
 
     .carousel-slide img {
       height: 100%;
-      min-height: 430px;
+      min-height: 520px;
       object-fit: cover;
     }
 
@@ -400,6 +413,11 @@
       gap: 18px;
     }
 
+    .services-showcase .services {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
     .card {
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -413,8 +431,22 @@
       object-fit: cover;
     }
 
+    .services-showcase .service-card {
+      display: grid;
+      grid-template-columns: 128px 1fr;
+    }
+
+    .services-showcase .service-card img {
+      height: 100%;
+      min-height: 188px;
+    }
+
     .service-body {
       padding: 24px;
+    }
+
+    .services-showcase .service-body {
+      padding: 18px;
     }
 
     .service-body h3 {
@@ -422,9 +454,19 @@
       font-size: 22px;
     }
 
+    .services-showcase .service-body h3 {
+      font-size: 20px;
+    }
+
     .service-body p {
       min-height: 76px;
       color: var(--muted);
+    }
+
+    .services-showcase .service-body p {
+      min-height: 0;
+      margin-bottom: 14px;
+      font-size: 14px;
     }
 
     .price {
@@ -905,6 +947,16 @@
       }
     }
 
+    @media (max-width: 760px) {
+      .services-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .store-carousel {
+        margin-bottom: 0;
+      }
+    }
+
     @media (max-width: 620px) {
       .topbar {
         padding: 14px 18px;
@@ -962,6 +1014,15 @@
         left: 20px;
         right: auto;
         bottom: 16px;
+      }
+
+      .services-showcase .service-card {
+        display: block;
+      }
+
+      .services-showcase .service-card img {
+        height: 210px;
+        min-height: 0;
       }
 
       .slide-caption {
@@ -1033,61 +1094,63 @@
           <h2>常用洗护套餐</h2>
           <p>按宠物体型、毛量与皮肤状态匹配洗护方案，价格清晰，进店后会先做基础评估。</p>
         </div>
-        <div class="store-carousel" aria-label="高端宠物洗护店内环境轮播">
-          <div class="carousel-track">
-            <figure class="carousel-slide">
-              <img src="assets/store-reception.png" alt="中国高端宠物洗护店接待等候区环境">
-              <figcaption class="slide-caption">
-                <strong>接待等候区</strong>
-                <span>温润木饰面、产品陈列与透明护理视线，让主人候场时也能安心。</span>
-              </figcaption>
-            </figure>
-            <figure class="carousel-slide">
-              <img src="assets/store-bathing.png" alt="中国高端宠物洗护店透明洗浴护理区环境">
-              <figcaption class="slide-caption">
-                <strong>透明洗浴区</strong>
-                <span>玻璃分区、独立浴缸与整洁毛巾收纳，强调一宠一消毒的护理标准。</span>
-              </figcaption>
-            </figure>
-            <figure class="carousel-slide">
-              <img src="assets/store-styling.png" alt="中国高端宠物洗护店造型吹护区环境">
-              <figcaption class="slide-caption">
-                <strong>造型吹护区</strong>
-                <span>低噪吹护设备与专业修剪工位，适合细致梳理和造型服务。</span>
-              </figcaption>
-            </figure>
+        <div class="services-showcase">
+          <div class="store-carousel" aria-label="高端宠物洗护店内环境轮播">
+            <div class="carousel-track">
+              <figure class="carousel-slide">
+                <img src="assets/store-reception.png" alt="中国高端宠物洗护店接待等候区环境">
+                <figcaption class="slide-caption">
+                  <strong>接待等候区</strong>
+                  <span>温润木饰面、产品陈列与透明护理视线，让主人候场时也能安心。</span>
+                </figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/store-bathing.png" alt="中国高端宠物洗护店透明洗浴护理区环境">
+                <figcaption class="slide-caption">
+                  <strong>透明洗浴区</strong>
+                  <span>玻璃分区、独立浴缸与整洁毛巾收纳，强调一宠一消毒的护理标准。</span>
+                </figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/store-styling.png" alt="中国高端宠物洗护店造型吹护区环境">
+                <figcaption class="slide-caption">
+                  <strong>造型吹护区</strong>
+                  <span>低噪吹护设备与专业修剪工位，适合细致梳理和造型服务。</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="carousel-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
-          <div class="carousel-dots" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="services">
+            <article class="card service-card">
+              <img src="assets/store-bathing.png" alt="高端宠物洗护店透明洗浴区">
+              <div class="service-body">
+                <h3>基础香波洗护</h3>
+                <p>适合日常清洁，包含洗澡、吹干、梳毛、耳眼清洁、脚底毛修剪与指甲护理。</p>
+                <div class="price"><span>小型犬起</span><strong>¥88</strong></div>
+              </div>
+            </article>
+            <article class="card service-card">
+              <img src="assets/store-styling.png" alt="高端宠物洗护店造型吹护区">
+              <div class="service-body">
+                <h3>精致造型修剪</h3>
+                <p>适合贵宾、比熊、雪纳瑞等造型需求，包含基础洗护与面部、身体造型修剪。</p>
+                <div class="price"><span>造型服务起</span><strong>¥168</strong></div>
+              </div>
+            </article>
+            <article class="card service-card">
+              <img src="assets/store-reception.png" alt="高端宠物洗护店接待等候区">
+              <div class="service-body">
+                <h3>猫咪舒缓洗护</h3>
+                <p>独立猫咪时段，低刺激香波、轻柔吹干与毛结处理，减少等待和环境压力。</p>
+                <div class="price"><span>猫咪洗护起</span><strong>¥158</strong></div>
+              </div>
+            </article>
           </div>
-        </div>
-        <div class="services">
-          <article class="card service-card">
-            <img src="assets/store-bathing.png" alt="高端宠物洗护店透明洗浴区">
-            <div class="service-body">
-              <h3>基础香波洗护</h3>
-              <p>适合日常清洁，包含洗澡、吹干、梳毛、耳眼清洁、脚底毛修剪与指甲护理。</p>
-              <div class="price"><span>小型犬起</span><strong>¥88</strong></div>
-            </div>
-          </article>
-          <article class="card service-card">
-            <img src="assets/store-styling.png" alt="高端宠物洗护店造型吹护区">
-            <div class="service-body">
-              <h3>精致造型修剪</h3>
-              <p>适合贵宾、比熊、雪纳瑞等造型需求，包含基础洗护与面部、身体造型修剪。</p>
-              <div class="price"><span>造型服务起</span><strong>¥168</strong></div>
-            </div>
-          </article>
-          <article class="card service-card">
-            <img src="assets/store-reception.png" alt="高端宠物洗护店接待等候区">
-            <div class="service-body">
-              <h3>猫咪舒缓洗护</h3>
-              <p>独立猫咪时段，低刺激香波、轻柔吹干与毛结处理，减少等待和环境压力。</p>
-              <div class="price"><span>猫咪洗护起</span><strong>¥158</strong></div>
-            </div>
-          </article>
         </div>
       </div>
     </section>

@@ -1,4 +1,9 @@
 export default function Home() {
+  const tomorrowAtNine = new Date();
+  tomorrowAtNine.setDate(tomorrowAtNine.getDate() + 1);
+  tomorrowAtNine.setHours(9, 0, 0, 0);
+  const defaultArrivalDateTime = `${tomorrowAtNine.getFullYear()}-${String(tomorrowAtNine.getMonth() + 1).padStart(2, "0")}-${String(tomorrowAtNine.getDate()).padStart(2, "0")}T${String(tomorrowAtNine.getHours()).padStart(2, "0")}:${String(tomorrowAtNine.getMinutes()).padStart(2, "0")}`;
+
   return (
     <>
       <header className="topbar">
@@ -284,6 +289,10 @@ export default function Home() {
                     </select>
                   </label>
                 </div>
+                <label>
+                  到店日期
+                  <input type="datetime-local" name="arrivalDateTime" defaultValue={defaultArrivalDateTime} />
+                </label>
                 <label>
                   备注
                   <textarea name="note" placeholder="可填写宠物名字、年龄、是否怕吹风、是否有毛结等"></textarea>

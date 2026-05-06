@@ -1,0 +1,14 @@
+{
+  "name": "pet-net",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.5.15",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
